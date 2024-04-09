@@ -27,6 +27,11 @@ kind requires Docker/Podman/Nerdctl and go 1.16+
 
 It supports Linux, macOS and Windows.
 
+Installation:
+> go install sigs.k8s.io/kind@v0.22.0
+
+
+
 **Pros**:
 - configuration can be defined in Yaml file
 - multi-node clusters supported
@@ -46,13 +51,17 @@ Default installation includes Control plane, CoreDNS and Metrics-server.
 
 ## Recommended solution
 
-Based on pros and cons of each solution, it's recommended to use kind. 
+Based on pros and cons of each solution, it's recommended to use minikube. 
+Example demo is below:
+
+![demo session](../demo.gif)
 
 
+## Conclusion
 
 
-Вступ: Опис інструментів та їх призначення.
-Характеристики: Опис основних характеристик кожного інструменту, таких як підтримувані ОС та архітектури, можливість автоматизації, наявність додаткових функцій, таких як моніторинг та керування Kubernetes кластером.
-Переваги та недоліки: Опис переваг та недоліків кожного інструменту, таких як легкість використання, швидкість розгортання, стабільність роботи, наявність документації та підтримки спільноти, складність налаштування та використання.
-Демонстрація: Коротка демонстрація рекомендованого Вами інструменту з використанням прикладу, такого як розгортання застосунку «Hello World» на Kubernetes.
-Висновки: Заключення та рекомендації щодо використання кожного інструменту в PoC для стартапу.
+| Name     | Container runtime     | Complexity | Extra add-ons       |
+|----------|-----------------------|------------|---------------------|
+| minikube | Docker, Podman, VM    | Easy       | dashboard, gcp-auth |
+| kind     | Docker/Podman/Nerdctl | Medium     |                     |
+| k3d      | Only Docker           | Medium     |                     |
